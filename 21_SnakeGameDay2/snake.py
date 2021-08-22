@@ -54,3 +54,9 @@ class Snake:
     def left(self):
         if self.snake_body[0].heading() != RIGHT:
             self.snake_body[0].setheading(LEFT)
+
+    def reset(self):
+        for segment in self.snake_body:
+            segment.goto(1000, 1000)
+        self.snake_body.clear()
+        self.create_body()
