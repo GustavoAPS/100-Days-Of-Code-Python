@@ -1,8 +1,10 @@
 PLACE_HOLDER = "[name]"
 
+# names list to replace
 with open("./Input/Names/invited_names.txt", "r") as names_file:
     names = names_file.readlines()
 
+# base letter
 with open("./Input/Letters/starting_letter.txt") as letter_file:
     letter_contents = letter_file.read()
     for name in names:
