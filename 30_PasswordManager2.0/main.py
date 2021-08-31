@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import json
-# import pyperclip
+
 
 # ----------------------- PASSWORD GENERATOR --------------------- #
 def generate_password():
@@ -18,25 +18,24 @@ def generate_password():
 
     #Use list comprehension
     for char in range(nr_letters):
-      password_list.append(random.choice(letters))
+        password_list.append(random.choice(letters))
 
     for char in range(nr_symbols):
-      password_list += random.choice(symbols)
+        password_list += random.choice(symbols)
 
     for char in range(nr_numbers):
-      password_list += random.choice(numbers)
+        password_list += random.choice(numbers)
 
     random.shuffle(password_list)
 
     password = ""
     for char in password_list:
-      password += char
+        password += char
 
     print(f"Your password is: {password}")
     password_entry.insert(0, password)
-    # pyperclip.copy(password)
 
-# ----------------------- SAVE PASSWORD -------------------------- #
+
 def save():
     # website user password
     website_name = web_site_entry.get()
@@ -68,6 +67,26 @@ def save():
 
     else:
         messagebox.showinfo(title="Error", message="Empty fields")
+# ------------------------ Search -------------------------------- #
+
+
+def search():
+    try:
+        with open("data.json", 'r') as file:
+            data = json.load(file)
+        site_name = web_site_entry.get()
+        search_data = data[site_name]
+        print(search_data)
+    except FileNotFoundError:
+        messagebox.showinfo(title="Error", message="Entry not found")
+    except KeyError:
+        print("Key not found")
+
+    else:
+        messagebox.showinfo(title=f"{site_name}", message=f"Username: {search_data['username']}\nPassword: {search_data['password']}")
+
+    finally:
+        print("done")
 # ----------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
@@ -81,22 +100,24 @@ web_site_label = Label(text="Website:")
 web_site_label.grid(row=1, column=0)
 web_site_entry = Entry(width=35)
 web_site_entry.focus()
-web_site_entry.grid(row=1, column=1, columnspan=2)
+web_site_entry.grid(row=1, column=1, columnspan=1)
+web_site_button = Button(text="Search", command=search, width=15)
+web_site_button.grid(row=1, column=2, columnspan=1)
 
 email_label = Label(text="Email/UserName:")
 email_label.grid(row=2, column=0)
-email_entry = Entry(width=35)
-email_entry.grid(row=2, column=1, columnspan=2)
+email_entry = Entry(width= 35)
+email_entry.grid(row=2, column=1, columnspan=1)
 
 password_label = Label(text="Password:")
 password_label.grid(row=3, column=0)
-password_entry = Entry(width=16, show="*")
+password_entry = Entry(width=35, show="*")
 password_entry.grid(row=3, column=1, columnspan=1)
-password_button = Button(text="Generate Password", command=generate_password)
+password_button = Button(text="Generate Password", command=generate_password, width=15)
 password_button.grid(row=3, column=2, columnspan=1)
 
-add_button = Button(text="Add", width=30, command=save)
-add_button.grid(row=4, column=1, columnspan=2)
+add_button = Button(text="Add", width=32, command=save)
+add_button.grid(row=4, column=1, columnspan=1)
 
 
 window.mainloop()
