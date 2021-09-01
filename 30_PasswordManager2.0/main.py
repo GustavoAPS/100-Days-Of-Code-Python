@@ -16,7 +16,6 @@ def generate_password():
 
     password_list = []
 
-    #Use list comprehension
     for char in range(nr_letters):
         password_list.append(random.choice(letters))
 
@@ -41,7 +40,6 @@ def save():
     website_name = web_site_entry.get()
     user_name = email_entry.get()
     password = password_entry.get()
-    entry = website_name+" | "+user_name+" | "+password + '\n'
     new_data = {website_name: {
                         "username": user_name,
                         "password": password,
@@ -63,7 +61,6 @@ def save():
             web_site_entry.delete(0, END)
             email_entry.delete(0, END)
             password_entry.delete(0, END)
-
 
     else:
         messagebox.showinfo(title="Error", message="Empty fields")
