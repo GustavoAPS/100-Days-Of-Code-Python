@@ -11,8 +11,8 @@ def generate_quote():
 
 
 def send_email():
-    my_email = "jamesbondmalevola@gmail.com"
-    my_password = "codorna123"
+    my_email = ""
+    my_password = ""
     motivational_message = generate_quote()
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
@@ -20,7 +20,7 @@ def send_email():
         connection.login(user=my_email, password=my_password)
         connection.sendmail(
             from_addr=my_email,
-            to_addrs="gugustavo137@gmail.com",
+            to_addrs="",
             msg=f"Subject:Remember\n\n{motivational_message}")
         connection.close()
         print("Email sent")

@@ -4,15 +4,15 @@ import smtplib
 
 
 def send_email():
-    my_email = "jamesbondmalevola@gmail.com"
-    my_password = "codorna123"
+    my_email = ""
+    my_password = ""
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
         connection.login(user=my_email, password=my_password)
         connection.sendmail(
             from_addr=my_email,
-            to_addrs="gugustavo137@gmail.com",
+            to_addrs="",
             msg=f"Subject:Space Station Reminder\n\nThe space station is in range")
         connection.close()
         print("Email sent")
