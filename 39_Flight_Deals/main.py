@@ -11,10 +11,14 @@ new_data_manager = DataManager()
 sheet_data = new_data_manager.get_sheet_data()
 pprint(sheet_data)
 
-#
-# print(new_fly_search.search_flight("Toronto"))
-#
-# for line_data in sheet_data:
-#     line_data['iataCode'] = new_fly_search.search_flight(line_data['city'])
-#
-# print(sheet_data)
+
+print(new_fly_search.search_flight("Toronto"))
+
+for line_data in sheet_data:
+    line_data['iataCode'] = new_fly_search.search_flight(line_data['city'])
+    # new_data_manager.update_line(line_data)
+
+for line_data in sheet_data:
+    new_data_manager.update_line(line_data)
+
+print(sheet_data)

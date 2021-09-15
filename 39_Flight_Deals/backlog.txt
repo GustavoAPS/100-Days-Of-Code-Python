@@ -1,6 +1,6 @@
 This file will need to use the DataManager,FlightSearch, FlightData, NotificationManager classes to achieve the program requirements.
 
-IATA codes: codes of the cities
+International Air Transport Association (IATA) code.
 
 program requirements:
 1)

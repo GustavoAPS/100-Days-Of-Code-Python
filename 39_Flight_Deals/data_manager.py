@@ -12,3 +12,13 @@ class DataManager:
     def get_sheet_data(self) -> dict:
         print(self.request.status_code)
         return self.request.json()["prices"]
+
+    def update_line(self, line):
+        self.sheety_put_endpoint = f"{self.sheety_endpoint}/{line['id']}"
+
+        self.params = {
+             "price": line
+         }
+
+        self.request = requests.put(url=self.sheety_put_endpoint, json=self.params)
+        print(self.request.status_code)
