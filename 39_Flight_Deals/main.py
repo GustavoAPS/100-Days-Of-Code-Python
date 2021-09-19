@@ -1,18 +1,15 @@
-from pprint import pprint
+from datetime import datetime, timedelta
 from flight_search import FlightSearch
 from data_manager import DataManager
 
+ORIGIN_CITY_IATA_CODE = "LON"
 
 new_fly_search = FlightSearch()
-# data manager will do the communication to sheets
 new_data_manager = DataManager()
-
-# receiving a dictionary from data manager
 sheet_data = new_data_manager.get_sheet_data()
-pprint(sheet_data)
 
-
-print(new_fly_search.get_destination_code("Toronto"))
+tomorrow = datetime.now()
+six_months_from_today = datetime.now() + timedelta(days=180)
 
 for line_data in sheet_data:
     line_data['iataCode'] = new_fly_search.get_destination_code(line_data['city'])
