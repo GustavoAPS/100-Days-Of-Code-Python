@@ -1,2 +1,50 @@
+/*
+Site color pallet:
+402218 - light
+865439 - medium light
+C68B59 - medium dark
+D7B19D - Dark
+*/
 
-body{background-color: blue;}
+/* CSS reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+{
+margin:0;
+padding:0;
+}
+
+html,body {
+margin:0;
+padding:0;
+}
+
+body{background-color: #D7B19D;}
+div{background-color: #C68B59;}
+
+.top-container{
+}
+
+.middle-container{
+width: 200px;
+height: 200px;
+background-color: red;
+position: absolute;
+left: 200px;
+}
+
+.bottom-container{
+width: 200px;
+height: 200px;
+background-color: blue;
+position: absolute;
+left: 200px;
+top: 800px;
+}
+
+.test-container{
+width: 200px;
+height: 200px;
+background-color: yellow;
+position: absolute;
+left: 0px;
+}
