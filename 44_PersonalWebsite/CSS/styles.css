@@ -7,44 +7,82 @@ D7B19D - Dark
 */
 
 /* CSS reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
 {
 margin:0;
 padding:0;
 }
 
-html,body {
+html {
 margin:0;
 padding:0;
 }
 
-body{background-color: #D7B19D;}
-div{background-color: #C68B59;}
+h1{
+font-size: 200%;
+width: 30%;
+margin: 0 auto 0 auto;
+}
+
+h1, h2, h3, h4{
+color: #402218;
+}
+.btn{
+color: #865439;
+}
+.footer-link{
+color: #865439;
+}
+
+body {
+margin:0;
+padding:0;
+background-color: #D7B19D;
+text-align: center;
+font-family: verdana, sans-serif;
+}
 
 .top-container{
+padding-top: 75px;
 }
 
 .middle-container{
-width: 200px;
-height: 200px;
-background-color: red;
-position: absolute;
-left: 200px;
+padding-top: 50px;
 }
 
-.bottom-container{
-width: 200px;
-height: 200px;
-background-color: blue;
+.top-cloud{
 position: absolute;
-left: 200px;
-top: 800px;
+right: 50px;
+top: 75px;
 }
 
-.test-container{
-width: 200px;
-height: 200px;
-background-color: yellow;
+.bottom-cloud{
 position: absolute;
-left: 0px;
+left: 100x;
+bottom: 250px;
+}
+
+.skill-row{
+width: 100%;
+text-align: left;
+line-height: 2;
+padding: 5% 0% 0% 0%;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.skills-image{
+width: 20%;
+float: left;
+margin-right: 30px;
+}
+
+.skills{
+margin-top: 20px;
+}
+
+.projects-image{
+width: 20%;
+float: right;
+margin-left: 30px;
 }
