@@ -5,10 +5,10 @@ import time
 
 # constants
 chrome_driver_path = r"C:\Users\Gustavo Afonso\Desktop\ChromeDriver\chromedriver.exe"
-INSTAGRAM_LOGIN_URL = "https://www.instagram.com/"
-SIMILAR_ACCOUNT = "pixelkohai"
-USERNAME = "darkorchidgames1@gmail.com"
-PASSWORD = "netosem"
+INSTAGRAM_LOGIN_URL = ""
+SIMILAR_ACCOUNT = ""
+USERNAME = ""
+PASSWORD = ""
 PEOPLE_FOLLOWED_DAY_LIMIT = 500
 FOLLOW_PERSON_COOLDOWN = 10
 
@@ -43,4 +43,9 @@ search_user_input.send_keys(Keys.ENTER)
 wait_for_seconds(2)
 
 # close the application
+
+driver.close()
 # driver.quit()
+#instagram allowed politic for automation:
+# Follow
+# unfollow
