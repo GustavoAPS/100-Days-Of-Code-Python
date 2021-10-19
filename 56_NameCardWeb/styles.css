@@ -1,0 +1,88 @@
+/*
+Site color pallet:
+402218 - light
+865439 - medium light
+C68B59 - medium dark
+D7B19D - Dark
+*/
+
+/* CSS reset */
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+{
+margin:0;
+padding:0;
+}
+
+html {
+margin:0;
+padding:0;
+}
+
+h1{
+font-size: 200%;
+width: 30%;
+margin: 0 auto 0 auto;
+}
+
+h1, h2, h3, h4{
+color: #402218;
+}
+.btn{
+color: #865439;
+}
+.footer-link{
+color: #865439;
+}
+
+body {
+margin:0;
+padding:0;
+background-color: #D7B19D;
+text-align: center;
+font-family: verdana, sans-serif;
+}
+
+.top-container{
+padding-top: 75px;
+}
+
+.middle-container{
+padding-top: 50px;
+}
+
+.top-cloud{
+position: absolute;
+right: 50px;
+top: 75px;
+}
+
+.bottom-cloud{
+position: absolute;
+left: 100x;
+bottom: 250px;
+}
+
+.skill-row{
+width: 100%;
+text-align: left;
+line-height: 2;
+padding: 5% 0% 0% 0%;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.skills-image{
+width: 20%;
+float: left;
+margin-right: 30px;
+}
+
+.skills{
+margin-top: 20px;
+}
+
+.projects-image{
+width: 20%;
+float: right;
+margin-left: 30px;
+}
