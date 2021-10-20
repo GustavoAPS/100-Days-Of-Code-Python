@@ -1,0 +1,22 @@
+[
+{
+  "id": 1,
+  "tittle": "Sculpture materials",
+  "sub-title": "What you need to start",
+  "text": "you will need some modeling tools and a modeling material, this can range from iron to marble tools or delicate metal tools to oil clays"
+},
+
+{
+  "id": 2,
+  "tittle": "Painting tips",
+  "sub-title": "what does it take to make a good painting",
+  "text": "Watch Bob Ross"
+},
+
+{
+  "id": 3,
+  "tittle": "Using Silicone",
+  "sub-title": "What you need to start",
+  "text": "Never mix two different brands of silicone "
+}
+]

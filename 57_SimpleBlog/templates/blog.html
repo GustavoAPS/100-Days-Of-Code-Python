@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+</head>
+<body>
+    <a href="{{url_for('home')}}">Home</a>
+
+    {% for post in posts: %}
+        <h1>Post 1 : {{ post["tittle"] }}</h1>
+        <h2>Text   : {{ post["tittle"] }}</h2>
+    {% endfor %}
+
+</body>
+</html>
