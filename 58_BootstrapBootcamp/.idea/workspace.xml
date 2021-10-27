@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5817523a-5ead-43bf-86e3-d58d8a4c7dc3" name="Changes" comment="Adding new navbar items.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exemple_1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Exemple_1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TinDog/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/TinDog/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TinDog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TinDog/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
