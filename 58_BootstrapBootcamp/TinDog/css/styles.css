@@ -7,9 +7,35 @@ body {
     color: #fff;
 }
 
-#features{
-    padding: 10% 10%
+h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
+}
 
+#features{
+    font-family: 'Ubuntu', sans-serif;
+    padding: 5% 10%
+}
+
+#testimonials{
+    text-align: center;
+    color: #fff;
+    padding: 5% 10% 10% 3%;
+    color: #fff;
+    background-color: #ff4c68;
+}
+
+#press{
+    text-align: center;
+    background-color: #ff4c68;
+    padding-bottom: 3%;
+}
+
+.press-image{
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 150px;
 }
 
 .container-fluid{
@@ -54,4 +80,9 @@ h1{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+}
+
+.testimonial-image{
+    width: 10%;
+    border-radius: 100%;
 }
