@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 import database_manager
+import json
 
 
 dataManager = database_manager.DatabaseManager()
@@ -13,9 +14,14 @@ def home():
 
 @app.route("/random")
 def get_random_cafe():
-    print(dataManager.get_random_cafe())
-    return render_template("index.html")
+    # print(dataManager.get_random_cafe())
+    return json.dumps(dataManager.get_random_cafe())
 
+
+@app.route("/all")
+def get_all_cafes():
+    # print(dataManager.get_random_cafe())
+    return json.dumps(dataManager.get_all_cafes())
 
 ## HTTP GET - Read Record
 
