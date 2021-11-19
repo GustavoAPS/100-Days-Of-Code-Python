@@ -11,9 +11,11 @@ class DatabaseManager:
         self.cursor = self.db.cursor()
         self.cursor.execute("SELECT id, name, map_url, img_url, location, has_sockets, has_toilet, has_wifi, can_take_calls, seats, coffee_price FROM cafe;")
         self.dataTuples = self.cursor.fetchall()
-        self.get_all_cafes()
+        self.read_cafes_from_database()
 
-    def get_all_cafes(self):
+    def read_cafes_from_database(self):
+
+        print("All cafes read from database")
 
         for self.cafeTuple in self.dataTuples:
             self.entry = {
@@ -30,11 +32,18 @@ class DatabaseManager:
                 "coffee_price": self.cafeTuple[10],
             }
             self.all_cafes.append(self.entry)
-            # print(self.entry)
 
     def get_random_cafe(self):
         return random.choice(self.all_cafes)
 
     def get_all_cafes(self):
-        self.cafe_dict = {"cafes": self.all_cafes}
+        print(self.all_cafes)
+        self.cafe_dict = {}
+
+        self.counter = 0
+
+        for cafe in self.all_cafes:
+            self.cafe_dict[str(cafe["id"])] = cafe
+            self.counter += 1
+
         return self.cafe_dict
