@@ -36,4 +36,5 @@ class DatabaseManager:
         return random.choice(self.all_cafes)
 
     def get_all_cafes(self):
-        return self.all_cafes
+        self.cafe_dict = {"cafes": self.all_cafes}
+        return self.cafe_dict

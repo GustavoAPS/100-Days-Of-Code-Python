@@ -21,7 +21,7 @@ def get_random_cafe():
 @app.route("/all")
 def get_all_cafes():
     # print(dataManager.get_random_cafe())
-    return json.dumps(dataManager.get_all_cafes())
+    return dataManager.get_all_cafes()
 
 ## HTTP GET - Read Record
 
