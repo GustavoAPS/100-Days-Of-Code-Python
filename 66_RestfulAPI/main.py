@@ -23,16 +23,11 @@ def get_all_cafes():
     # print(dataManager.get_random_cafe())
     return dataManager.get_all_cafes()
 
-## HTTP GET - Read Record
 
-
-## HTTP POST - Create Record
-
-
-## HTTP PUT/PATCH - Update Record
-
-
-## HTTP DELETE - Delete Record
+#/search?loc=Peckham   --THis is an example of what should be done
+@app.route("/search/<string:loc>")
+def search_for_cafe(loc):
+    return "nothing"
 
 
 if __name__ == '__main__':
