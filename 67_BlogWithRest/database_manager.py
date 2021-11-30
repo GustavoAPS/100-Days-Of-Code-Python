@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 
-db = sqlite3.connect("books-collection.db")
-cursor = db.cursor()
 
-cursor.execute("CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, title varchar(250) NOT NULL UNIQUE, author varchar(250) NOT NULL, rating FLOAT NOT NULL)")
+class DatabaseManager:
+    def __init__(self):
+        self.db = sqlite3.connect("books-collection.db")
+        self.cursor = self.db.cursor()
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, title varchar(250) NOT NULL UNIQUE, author varchar(250) NOT NULL, rating FLOAT NOT NULL)")
 
 # cursor.execute("INSERT OR REPLACE INTO books VALUES(1, 'Harry Potter', 'J. K. Rowling', '9.3')")
 # cursor.execute("INSERT OR REPLACE INTO books VALUES(2, 'The Hobbit', 'J. R. R. Tolkien', '9.75')")
