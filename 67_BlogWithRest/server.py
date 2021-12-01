@@ -1,10 +1,12 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+import database_manager
 import json
 
 
 app = Flask(__name__)
+database = database_manager.DatabaseManager()
 
 
 def get_posts():
@@ -27,6 +29,15 @@ def about():
 @app.route('/post/<int:post_id>')
 def post(post_id):
     return render_template('post.html', id=post_id)
+
+
+@app.route('/create_post', methods=["POST"])
+def create_post():
+    title = request.form['title']
+    sub_title = request.form['sub_title']
+    text = request.form['text']
+    database.create_new_post(post_title=title, post_sub_title=sub_title, post_text=text)
+    return f"{title} {sub_title} {text}"
 
 
 @app.route('/contact', methods=["POST", "GET"])
