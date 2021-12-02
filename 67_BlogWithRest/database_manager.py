@@ -25,7 +25,9 @@ class DatabaseManager:
         self.db.commit()
 
     def create_new_post(self, post_title, post_sub_title, post_text):
-        self.cursor.execute(f"INSERT OR REPLACE INTO posts VALUES('None','{post_title}','{post_sub_title}','{post_text}')")
+        self.cursor.execute(f"INSERT OR REPLACE INTO posts "
+                            "(title,sub_title,post_text)"
+                            f"VALUES('{post_title}','{post_sub_title}','{post_text}')")
         self.db.commit()
 
     def get_post(self):
