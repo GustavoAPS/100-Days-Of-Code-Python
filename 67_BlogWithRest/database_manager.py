@@ -13,6 +13,7 @@ class DatabaseManager:
         self.db = sqlite3.connect("posts.db", check_same_thread=False)
         self.cursor = self.db.cursor()
         self.create_database()
+        self.all_posts = []
 
     def create_database(self):
 
@@ -29,6 +30,37 @@ class DatabaseManager:
                             "(title,sub_title,post_text)"
                             f"VALUES('{post_title}','{post_sub_title}','{post_text}')")
         self.db.commit()
+
+    def get_all_posts(self):
+
+        print("Get all posts called")
+
+        self.cursor.execute("SELECT id, title, sub_title, post_text FROM posts;")
+
+        for self.post_tuple in self.cursor.fetchall():
+            print("-----")
+            self.entry={
+                "id": self.post_tuple[0],
+                "title": self.post_tuple[1],
+                "sub_title": self.post_tuple[2],
+                "text": self.post_tuple[3],
+            }
+            self.all_posts.append(self.entry)
+
+        return self.all_posts
+
+
+    # dataTuples = cursor.fetchall()
+
+    # all_books = []
+
+    # for bookTuple in dataTuples:
+    #    entry = {
+    #        "title": bookTuple[0],
+    #        "author": bookTuple[1],
+    #        "rating": bookTuple[2],
+    #    }
+    #    all_books.append(entry)
 
     def get_post(self):
         pass

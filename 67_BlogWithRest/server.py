@@ -18,7 +18,7 @@ def get_posts():
 @app.route('/')
 @app.route('/index')
 def home():
-    return render_template('index.html', posts=get_posts())
+    return render_template('index.html', posts=database.get_all_posts())
 
 
 @app.route('/about')
