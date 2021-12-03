@@ -39,7 +39,8 @@ def create_post():
         sub_title = request.form['subtitle']
         text = request.form['text']
         database.create_new_post(post_title=title, post_sub_title=sub_title, post_text=text)
-        return f"{title} {sub_title} {text}"
+        print(f"{title} {sub_title} {text}")
+        return render_template('index.html', posts=database.get_all_posts())
 
     if request.method == "GET":
         return render_template('make-post.html')
