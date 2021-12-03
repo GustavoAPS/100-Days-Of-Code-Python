@@ -28,7 +28,7 @@
                     <div class="post-preview">
                         <a href="{{url_for('post', post_id=post.id)}}">
                             <h2 class="post-title">{{post.title}}</h2>
-                            <h3 class="post-subtitle">{{posts.subTitle}}</h3>
+                            <h3 class="post-subtitle">{{posts.sub_title}}</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
@@ -40,7 +40,7 @@
                     <hr class="my-4" />
                     {%endfor%}
                     <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="create-post">Create New Post</a></div>
                 </div>
             </div>
         </div>

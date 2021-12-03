@@ -1,0 +1,53 @@
+{% block content %}
+{% include "header.html" %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/edit-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>New Post</h1>
+            <span class="subheading">You're going to make a great blog post!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+
+        <form id="createPostForm" action="/create-post" method="post" novalidate>
+
+            <div class="form-floating">
+                <input class="form-control" name="title" id="title" type="text" placeholder="Enter the tittle..." />
+                <label for="name">Title</label>
+                <div class="invalid-feedback" data-sb-feedback="name:required">A title is required.</div>
+            </div>
+
+            <div class="form-floating">
+                <input class="form-control" name="subtitle" id="subtitle" type="text" placeholder="Enter the subtitle..." />
+                <label for="name">Sub Title</label>
+                <div class="invalid-feedback" data-sb-feedback="sub-title:required">A sub title is required.</div>
+            </div>
+
+          <div class="form-floating">
+                <textarea class="form-control" name="text" id="text" placeholder="Enter your message here..." style="height: 12rem" ></textarea>
+                <label for="message">Text</label>
+                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+            </div>
+            <br />
+            <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Send</button>
+
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+
+{% include "footer.html" %}
+{% endblock %}

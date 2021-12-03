@@ -31,13 +31,18 @@ def post(post_id):
     return render_template('post.html', id=post_id)
 
 
-@app.route('/create_post', methods=["POST"])
+@app.route('/create-post', methods=["POST", "GET"])
 def create_post():
-    title = request.form['title']
-    sub_title = request.form['sub_title']
-    text = request.form['text']
-    database.create_new_post(post_title=title, post_sub_title=sub_title, post_text=text)
-    return f"{title} {sub_title} {text}"
+
+    if request.method == "POST":
+        title = request.form['title']
+        sub_title = request.form['subtitle']
+        text = request.form['text']
+        database.create_new_post(post_title=title, post_sub_title=sub_title, post_text=text)
+        return f"{title} {sub_title} {text}"
+
+    if request.method == "GET":
+        return render_template('make-post.html')
 
 
 @app.route('/contact', methods=["POST", "GET"])
