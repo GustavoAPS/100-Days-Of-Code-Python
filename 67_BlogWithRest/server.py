@@ -26,13 +26,32 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/post/<int:post_id>')
-def post(post_id):
-    return render_template('post.html', id=post_id)
+@app.route('/post', methods=["GET"])
+def post():
+
+    print(request.args.get("post_id"))
+    all_posts = database.get_all_posts()
+    new_post = all_posts[int(request.args.get("post_id")) - 1]
+    return render_template('post.html', post=new_post)
 
 
 @app.route('/create-post', methods=["POST", "GET"])
 def create_post():
+
+    if request.method == "POST":
+        title = request.form['title']
+        sub_title = request.form['subtitle']
+        text = request.form['text']
+        database.create_new_post(post_title=title, post_sub_title=sub_title, post_text=text)
+        print(f"{title} {sub_title} {text}")
+        return render_template('index.html', posts=database.get_all_posts())
+
+    if request.method == "GET":
+        return render_template('make-post.html')
+
+
+@app.route('/edit-post', methods=["POST", "GET"])
+def edit_post():
 
     if request.method == "POST":
         title = request.form['title']
@@ -53,7 +72,6 @@ def contact():
         email = request.form['email']
         phone = request.form['phone']
         message = request.form['message']
-        # send email function
         print(f"{name} {email} {phone} {message}")
         return f"Message sent"
 
