@@ -1,6 +1,3 @@
-#Write your code below this line 👇
-
-
 petName = input("What is yout pet name?\n")
 cityName = input("What is your city name?\n")
 
