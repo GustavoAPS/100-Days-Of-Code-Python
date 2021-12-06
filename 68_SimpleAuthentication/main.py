@@ -44,7 +44,7 @@ def register():
               f"Email: {email}\n"
               f"Password: {password}\n")
         create_new_user(name, email, password)
-        return render_template("secrets.html")
+        return render_template("secrets.html", name_of_user=name)
 
     if request.method == "GET":
         return render_template("register.html")
@@ -67,7 +67,8 @@ def logout():
 
 @app.route('/download')
 def download():
-    pass
+    print("download called")
+    return send_from_directory('static/files/', "cheat_sheet.pdf", as_attachment=True)
 
 
 if __name__ == "__main__":
