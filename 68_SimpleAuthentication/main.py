@@ -1,3 +1,4 @@
+import werkzeug.security
 from flask import Flask, render_template, request, url_for, redirect, flash, send_from_directory
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
@@ -22,7 +23,9 @@ class User(UserMixin, db.Model):
 
 
 def create_new_user(new_user_name, new_user_email, new_user_password):
-    guest = User(name=new_user_name, email=new_user_email, password=new_user_password)
+    hash_password = werkzeug.security.generate_password_hash(new_user_password, method='pbkdf2:sha256', salt_length=8)
+    print(hash_password)
+    guest = User(name=new_user_name, email=new_user_email, password=hash_password)
     db.session.add(guest)
     db.session.commit()
 
