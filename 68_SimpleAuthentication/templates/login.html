@@ -1,8 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <div class="box">
     <h1>Login</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <p style="color: red; text-align: center">{{ message }}</p>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
 
     <form action="{{ url_for('login') }}" method="post">
         <input type="text" name="email" placeholder="Email" required="required"/>
