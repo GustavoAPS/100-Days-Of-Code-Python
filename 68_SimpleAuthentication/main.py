@@ -7,7 +7,10 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'any-secret-key-you-choose'
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+app.config['SECRET_KEY'] = 'f2413f543f15b368b040661451f335983158b1e4567a0abe96b481b357a864e0'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -21,6 +24,13 @@ class User(UserMixin, db.Model):
 #Line below only required once, when creating DB. 
 # db.create_all()
 
+class loginUser():
+    is_authenticated = False
+    is_active = False
+    is_anonymous = False
+
+    def get_id:
+        pass
 
 def create_new_user(new_user_name, new_user_email, new_user_password):
     hash_password = werkzeug.security.generate_password_hash(new_user_password, method='pbkdf2:sha256', salt_length=8)
