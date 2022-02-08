@@ -2,7 +2,7 @@ import numpy as np
 from PIL import Image
 
 # load image
-image = Image.open('Images_to_watermark/lake_in_fall.jpg')
+image = Image.open('images_to_watermark/lake_in_fall.jpg')
 watermark_stamp = Image.open('watermark_stamps/squares_stamp.png')
 
 # converting image to array
@@ -17,4 +17,4 @@ for m in range(0, 64):
             pix[m, n, 1] = pix_stamp[m, n, 1]  # 1 accesses the second channel
             pix[m, n, 2] = pix_stamp[m, n, 2]  # 2 accesses the third channel
 
-Image.fromarray(pix).save("ImagesWatermarked/lake_in_fall.jpg")
+Image.fromarray(pix).save("images_watermarked/lake_in_fall.jpg")
