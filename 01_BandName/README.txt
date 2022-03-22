@@ -1,6 +1,6 @@
 Day 1 project
 
-Code function:
+Project Description:
 The code will crate you a band name joining your pet name and your city name.
 
 Requirements:
